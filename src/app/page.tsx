@@ -12,6 +12,11 @@ import Footer from "@/components/Footer"
 
 const videoSources = ["/h9.webm", "/h8.webm", "/h7.webm", "/h10.webm"]
 
+type resMessage = {
+  message: string;
+}
+
+
 export default function Home() {
   const [activeVideo, setActiveVideo] = useState(0)
   const [email, setEmail] = useState("")
@@ -39,7 +44,7 @@ export default function Home() {
   const handleClick = async ()=> {
     const toastID = toast.loading("Adding to waitlist");
 
-    let res = await fetch('/api/join-waitinglist', {
+    const res = await fetch('/api/join-waitinglist', {
       method: 'POST',
       body: JSON.stringify({
         email : email,
@@ -47,9 +52,11 @@ export default function Home() {
       })
     })
 
-    res = await res.json()
+    const data = await res.json()
 
-    toast.success(res?.message, {
+    let message = data.message
+    
+    toast.success(message, {
         id: toastID
     });
    }
