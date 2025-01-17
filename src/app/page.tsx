@@ -207,22 +207,22 @@ export default function Home() {
           {/* Second Box */}
           <div className="mt-12 sm:mt-24 w-full max-w-[1380px] rounded-[18px] bg-[#F5F5F7] px-4 sm:px-6 py-8 sm:py-11">
             <div className="relative flex flex-col lg:flex-row min-h-[680px]">
-              <div className="max-w-full lg:max-w-[500px] mt-8 lg:mt-28 text-center">
-                <h2 className="text-[18px] sm:text-[21px] text-black">
+              <div className="max-w-full lg:max-w-[500px] mt-8 lg:mt-28 text-center space-y-8 lg:space-y-12 -ml-4">
+                <h2 className="text-[18px] sm:text-[21px] text-black mb-8 lg:mb-12">
                   Launch the <span className="inline-flex items-center justify-center border border-black rounded-[14px] px-3 py-1 font-normal text-black">plugin</span>
                 </h2>
 
-                <h1 className="mt-4 sm:mt-6 text-[24px] sm:text-[32px] font-medium leading-tight">
+                <h1 className="text-[24px] sm:text-[32px] font-medium leading-tight mb-8 lg:mb-12">
                   <span className="bg-gradient-to-r from-[#6790BC] to-[#91B7D9] bg-clip-text text-transparent">
                     Initiate the stream. <br /> Do your thing.
                   </span>
                 </h1>
 
-                <h2 className="text-[14px] sm:text-[16px] font-normal mt-4 sm:mt-7 text-black">
+                <p className="text-[14px] sm:text-[16px] font-normal text-black max-w-[90%] mx-auto">
                   Our AI will be looking and constantly monitoring the stream in real-time, keeping up and working in sync with the stream delay set in place by you.
-                </h2>
+                </p>
 
-                <div className="flex items-center justify-center space-x-4 mt-8 sm:mt-16">
+                <div className="flex items-center justify-center space-x-4 pt-8 lg:pt-12">
                   <button className="bg-[#000000] text-white px-4 sm:px-5 py-1.5 rounded-[20px] hover:scale-105 transition-transform duration-300 active:scale-95 text-[13px] hover:shadow-md active:shadow-sm">
                     Get Started
                   </button>
