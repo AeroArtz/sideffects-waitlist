@@ -49,7 +49,7 @@ export default function Home() {
 
     const data = await res.json()
 
-    let message = data.message
+    const message = data.message
 
     toast.success(message, {
         id: toastID
