@@ -12,11 +12,6 @@ import Footer from "@/components/Footer"
 
 const videoSources = ["/h9.webm", "/h8.webm", "/h7.webm", "/h10.webm"]
 
-type resMessage = {
-  message: string;
-}
-
-
 export default function Home() {
   const [activeVideo, setActiveVideo] = useState(0)
   const [email, setEmail] = useState("")
@@ -55,7 +50,7 @@ export default function Home() {
     const data = await res.json()
 
     let message = data.message
-    
+
     toast.success(message, {
         id: toastID
     });
