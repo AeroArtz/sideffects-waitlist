@@ -5,7 +5,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 //req is short for request
 export async function POST(req: NextRequest) {
-    const {email} = await req.json()
+    const {email, name} = await req.json()
 
 
     try {
@@ -22,7 +22,7 @@ export async function POST(req: NextRequest) {
       }
 
       // insert user
-      await db.insert(users).values({ email: email });
+      await db.insert(users).values({ email: email, name: name });
 
       return NextResponse.json(
         { message: "Successfully added to waitlist" },

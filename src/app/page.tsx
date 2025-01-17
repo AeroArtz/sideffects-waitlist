@@ -15,6 +15,8 @@ const videoSources = ["/h9.webm", "/h8.webm", "/h7.webm", "/h10.webm"]
 export default function Home() {
   const [activeVideo, setActiveVideo] = useState(0)
   const [email, setEmail] = useState("")
+  const [name, setName] = useState("")
+
 
   const [isValid, setIsValid] = useState(true)
 
@@ -29,13 +31,19 @@ export default function Home() {
     setIsValid(validateEmail(newEmail))
   }, [validateEmail])
 
+  const handleNameChange = ((e: React.ChangeEvent<HTMLInputElement>) => {
+    const newName = e.target.value
+    setName(newName)
+  })
+
   const handleClick = async ()=> {
     const toastID = toast.loading("Adding to waitlist");
 
     let res = await fetch('/api/join-waitinglist', {
       method: 'POST',
       body: JSON.stringify({
-        email : email
+        email : email,
+        name : name
       })
     })
 
@@ -163,6 +171,13 @@ export default function Home() {
                   Be the first to access our AI-powered viral clip generator and transform your content game forever.
                 </p>
                 <div className="space-y-4">
+                  <Input
+                    onChange={handleNameChange}
+                    type="text"
+                    placeholder="Enter your Name"
+                    value={name}
+                    className="h-10 border-white/20 bg-white/10 text-sm text-white placeholder:text-gray-400"
+                  />
                   <Input
                     onChange={handleChange}
                     type="email"
